@@ -8,8 +8,8 @@ window.showForm = showForm;
 const supabaseUrl = 'https://vqsubaffcgtsjnjengub.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxc3ViYWZmY2d0c2puamVuZ3ViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE4MzExNjAsImV4cCI6MjA2NzQwNzE2MH0.NtfjUeRmn6fzwFVmC8vhMOSXECqMbTK_YUnDgdOsuYc';
 
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Utilisation version globale (script CDN dans le HTML)
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 // Fonction pour créer des alertes personnalisées
 function showCustomAlert(message, type = 'info') {
