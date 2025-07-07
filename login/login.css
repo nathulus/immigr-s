@@ -1,0 +1,127 @@
+body { font-family: Arial, sans-serif; background: #181a1b; margin: 0; padding: 0; color: #f1f1f1; font-size: 1.2em; }
+.container { max-width: 480px; margin: 60px auto; background: #23272a; padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+h2 { text-align: center; color: #ffb300; font-size: 2.2em; }
+form { display: flex; flex-direction: column; gap: 18px; }
+input[type="text"], input[type="password"], input[type="email"] { padding: 16px; border: 1px solid #ff9800; border-radius: 4px; background: #181a1b; color: #fff; font-size: 1.1em; }
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus { border-color: #ffe066; outline: none; }
+button { padding: 16px; background: linear-gradient(90deg, #ff9800, #ffe066); color: #181a1b; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 1.1em; transition: background 0.2s; }
+button:hover { background: linear-gradient(90deg, #ffe066, #ff9800); color: #23272a; }
+.switch { text-align: center; margin-top: 22px; font-size: 1.05em; }
+.switch a { color: #ffe066; text-decoration: none; font-weight: bold; }
+.switch a:hover { color: #ff9800; text-decoration: underline; }
+
+/* Style pour les alertes personnalisées */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #23272a 0%, #2c3136 100%);
+    color: #ffe066;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border-left: 4px solid #ff9800;
+    font-weight: 500;
+    font-size: 1em;
+    z-index: 10000;
+    max-width: 400px;
+    word-wrap: break-word;
+    animation: slideInRight 0.3s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+.custom-alert.success {
+    border-left-color: #28a745;
+    color: #28a745;
+}
+
+.custom-alert.error {
+    border-left-color: #dc3545;
+    color: #dc3545;
+}
+
+.custom-alert.warning {
+    border-left-color: #ffc107;
+    color: #ffc107;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.custom-alert.hide {
+    animation: slideOutRight 0.3s ease-in forwards;
+}
+
+/* Style case à cocher Se souvenir de moi */
+.remember-me-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 0 0;
+    color: #ffe066;
+    font-size: 1.04em;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+.remember-me-label input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+.custom-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ffb300;
+    border-radius: 5px;
+    background: #181a1b;
+    display: inline-block;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-right: 4px;
+}
+.remember-me-label input[type="checkbox"]:focus + .custom-checkbox {
+    box-shadow: 0 0 0 2px #ffe06655;
+    border-color: #ffe066;
+}
+.custom-checkbox:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 7px;
+    height: 13px;
+    border: solid #ffb300;
+    border-width: 0 3px 3px 0;
+    border-radius: 1px;
+    transform: rotate(45deg);
+}
+.remember-me-label input[type="checkbox"]:checked + .custom-checkbox:after {
+    display: block;
+    animation: checkAppear 0.18s;
+}
+@keyframes checkAppear {
+    from { opacity: 0; transform: scale(0.7) rotate(45deg); }
+    to { opacity: 1; transform: scale(1) rotate(45deg); }
+} 

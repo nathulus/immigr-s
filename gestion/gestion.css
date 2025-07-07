@@ -1,0 +1,619 @@
+body { font-family: Arial, sans-serif; background: #181a1b; margin: 0; padding: 0; color: #f1f1f1; }
+.container { max-width: 600px; margin: 60px auto; background: #23272a; padding: 35px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+h2 { text-align: center; margin-bottom: 30px; color: #ffb300; }
+.admin-section { margin-top: 20px; }
+label { display: block; margin: 12px 0 6px; color: #ffe066; }
+input, textarea { width: 100%; padding: 10px; border: 1px solid #ff9800; border-radius: 4px; background: #181a1b; color: #fff; }
+input:focus, textarea:focus { border-color: #ffe066; outline: none; }
+button { padding: 10px 20px; background: linear-gradient(90deg, #ff9800, #ffe066); color: #181a1b; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
+button:hover { background: linear-gradient(90deg, #ffe066, #ff9800); color: #23272a; }
+
+.navbar {
+    width: 100%;
+    background: #23272a;
+    color: #ffe066;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.navbar-title.minecraft-font {
+    font-family: 'Minecraft', 'Minecraftia', 'Arial', sans-serif;
+    font-size: 2em;
+    color: #ffe066;
+    text-shadow: 2px 2px 0 #181a1b, 4px 4px 0 #ffb300;
+    letter-spacing: 2px;
+    margin-right: 32px;
+}
+
+.navbar-user {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-pseudo {
+    background: linear-gradient(90deg, #ff9800, #ffe066);
+    color: #181a1b;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.user-pseudo:hover {
+    background: linear-gradient(90deg, #ffe066, #ff9800);
+}
+
+.user-popup {
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background: #23272a;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    min-width: 140px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.user-popup a {
+    color: #ff9800;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    transition: color 0.2s;
+}
+
+.user-popup a:hover {
+    background: transparent;
+    color: #ffb300;
+}
+
+.nav-btn {
+    background: linear-gradient(90deg, #ff9800, #ffe066);
+    color: #181a1b;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(90deg, #ffe066, #ff9800);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+}
+
+.main-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 70vh;
+    padding: 40px 20px;
+}
+
+.main-title {
+    font-family: 'Minecraft', 'Minecraftia', 'Arial', sans-serif;
+    font-size: 2.8em;
+    color: #ffe066;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px #181a1b;
+}
+
+.gestion-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.gestion-section {
+    background: #23272a;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border: 2px solid #ffb300;
+}
+
+.gestion-section h2 {
+    color: #ffb300;
+    font-size: 1.8em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Styles pour les tickets */
+.ticket-admin-item {
+    background: #181a1b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-left: 4px solid #ffb300;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.ticket-info {
+    flex: 1;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ticket-user {
+    color: #ffe066;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.ticket-date {
+    color: #ffb300;
+    font-size: 0.9em;
+}
+
+.ticket-title {
+    color: #ffe066;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.ticket-message {
+    color: #f1f1f1;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.ticket-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.ticket-status.pending {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border: 1px solid #ffc107;
+}
+
+.ticket-status.resolved {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.ticket-status.refused {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.ticket-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 120px;
+}
+
+/* Styles pour les utilisateurs */
+.user-admin-item {
+    background: #181a1b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-left: 4px solid #9c27b0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.user-pseudo {
+    color: #ffe066;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.user-role {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.user-role.user {
+    background: rgba(156, 39, 176, 0.2);
+    color: #9c27b0;
+    border: 1px solid #9c27b0;
+}
+
+.user-role.moderateur {
+    background: rgba(255, 107, 53, 0.2);
+    color: #ff6b35;
+    border: 1px solid #ff6b35;
+}
+
+.user-role.admin {
+    background: rgba(255, 184, 0, 0.2);
+    color: #ffb300;
+    border: 1px solid #ffb300;
+}
+
+.user-email {
+    color: #f1f1f1;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.user-date {
+    color: #ffb300;
+    font-size: 0.8em;
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 120px;
+}
+
+/* Boutons d'action */
+.action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.resolve-btn {
+    background: linear-gradient(90deg, #28a745, #20c997);
+    color: white;
+}
+
+.resolve-btn:hover:not(:disabled) {
+    background: linear-gradient(90deg, #20c997, #28a745);
+    transform: translateY(-1px);
+}
+
+.resolve-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.role-btn {
+    background: linear-gradient(90deg, #9c27b0, #ba68c8);
+    color: white;
+}
+
+.role-btn:hover {
+    background: linear-gradient(90deg, #ba68c8, #9c27b0);
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: linear-gradient(90deg, #dc3545, #e74c3c);
+    color: white;
+}
+
+.delete-btn:hover:not(:disabled) {
+    background: linear-gradient(90deg, #e74c3c, #dc3545);
+    transform: translateY(-1px);
+}
+
+.delete-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.refuse-btn {
+    background: linear-gradient(90deg, #dc3545, #ff6b6b);
+    color: white;
+}
+
+.refuse-btn:hover:not(:disabled) {
+    background: linear-gradient(90deg, #ff6b6b, #dc3545);
+    transform: translateY(-1px);
+}
+
+.refuse-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Alertes personnalisées */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #23272a 0%, #2c3136 100%);
+    color: #ffe066;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border-left: 4px solid #ff9800;
+    font-weight: 500;
+    font-size: 1em;
+    z-index: 10000;
+    max-width: 400px;
+    word-wrap: break-word;
+    animation: slideInRight 0.3s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+.custom-alert.success {
+    border-left-color: #28a745;
+    color: #28a745;
+}
+
+.custom-alert.error {
+    border-left-color: #dc3545;
+    color: #dc3545;
+}
+
+.custom-alert.warning {
+    border-left-color: #ffc107;
+    color: #ffc107;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.custom-alert.hide {
+    animation: slideOutRight 0.3s ease-in forwards;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gestion-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-center {
+        padding: 20px 10px;
+    }
+    
+    .gestion-section {
+        padding: 20px;
+    }
+    
+    .ticket-admin-item,
+    .user-admin-item {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .ticket-actions,
+    .user-actions {
+        flex-direction: row;
+        justify-content: flex-start;
+        min-width: auto;
+    }
+    
+    .navbar {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .navbar-title.minecraft-font {
+        font-size: 1.5em;
+    }
+}
+
+.gestion-switch-btns {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+.switch-btn {
+    background: linear-gradient(90deg, #ff9800, #ffe066);
+    color: #181a1b;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.switch-btn.active, .switch-btn:focus {
+    background: linear-gradient(90deg, #ffe066, #ff9800);
+    color: #23272a;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+}
+
+.user-popup-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-popup-content {
+    background: #23272a;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    padding: 32px 28px 22px 28px;
+    min-width: 260px;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+.user-popup-content h3 {
+    color: #ffb300;
+    margin-bottom: 8px;
+    font-size: 1.3em;
+}
+.user-popup-content label {
+    color: #ffe066;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.user-popup-content select {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #ff9800;
+    background: #181a1b;
+    color: #fff;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.user-popup-btns {
+    display: flex;
+    gap: 14px;
+    margin-top: 10px;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    .user-popup-content {
+        padding: 16px 6vw 12px 6vw;
+        min-width: 0;
+    }
+    .user-popup-btns {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* Pop-up de confirmation stylisée */
+.custom-confirm-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(24, 26, 27, 0.85);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s;
+}
+.custom-confirm-box {
+    background: #23272a;
+    border-radius: 14px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.5);
+    padding: 36px 32px 28px 32px;
+    min-width: 320px;
+    max-width: 90vw;
+    text-align: center;
+    border: 2px solid #ff9800;
+    animation: popIn 0.2s;
+}
+.custom-confirm-message {
+    color: #ffe066;
+    font-size: 1.2em;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+.custom-confirm-message i {
+    color: #ff9800;
+    font-size: 1.6em;
+}
+.custom-confirm-btns {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+}
+.custom-confirm-box .action-btn.confirm-btn {
+    background: linear-gradient(90deg, #ff9800, #ffe066);
+    color: #181a1b;
+}
+.custom-confirm-box .action-btn.cancel-btn {
+    background: #23272a;
+    color: #ffe066;
+    border: 1.5px solid #ff9800;
+}
+.custom-confirm-box .action-btn.cancel-btn:hover {
+    background: #181a1b;
+    color: #ffb300;
+}
+@keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes popIn {
+    from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; }
+} 
