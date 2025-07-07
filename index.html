@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion / Inscription</title>
+    <link rel="stylesheet" href="login/login.css">
+    <link rel="icon" type="image/webp" href="https://cdn.discordapp.com/attachments/1009124376458842153/1391613972347883662/AE978395-B96A-49B0-8FAB-15253B8B6FC3.webp?ex=686c8901&is=686b3781&hm=539e1ea27f346646af2cf6c45849a05fe8470de9f517ba51d1ce06e85f4e1b28&">
+    <link rel="apple-touch-icon" href="https://cdn.discordapp.com/attachments/1009124376458842153/1391613972347883662/AE978395-B96A-49B0-8FAB-15253B8B6FC3.webp?ex=686c8901&is=686b3781&hm=539e1ea27f346646af2cf6c45849a05fe8470de9f517ba51d1ce06e85f4e1b28&">
+</head>
+<body>
+    <div class="container">
+        <div id="loginForm">
+            <h2>Connexion</h2>
+            <form>
+                <input type="text" placeholder="Pseudo Minecraft ou Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <label class="remember-me-label">
+                    <input type="checkbox" id="rememberMe">
+                    <span class="custom-checkbox"></span>
+                    Se souvenir de moi
+                </label>
+                <button type="submit">Se connecter</button>
+            </form>
+            <div class="switch">
+                Pas de compte ? <a href="#" onclick="showForm('registerForm'); event.preventDefault();">Inscrivez-vous</a>
+            </div>
+        </div>
+        <div id="registerForm" style="display:none;">
+            <h2>Inscription</h2>
+            <form>
+                <input type="text" placeholder="Pseudo Minecraft" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+            <div class="switch">
+                Déjà un compte ? <a href="#" onclick="showForm('loginForm'); event.preventDefault();">Connectez-vous</a>
+            </div>
+        </div>
+    </div>
+    <script src="login/login.js"></script>
+</body>
+</html> 

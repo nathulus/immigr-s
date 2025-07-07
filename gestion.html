@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion - Les Immigrés</title>
+    <link rel="stylesheet" href="gestion/gestion.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/webp" href="https://cdn.discordapp.com/attachments/1009124376458842153/1391613972347883662/AE978395-B96A-49B0-8FAB-15253B8B6FC3.webp?ex=686c8901&is=686b3781&hm=539e1ea27f346646af2cf6c45849a05fe8470de9f517ba51d1ce06e85f4e1b28&">
+    <link rel="apple-touch-icon" href="https://cdn.discordapp.com/attachments/1009124376458842153/1391613972347883662/AE978395-B96A-49B0-8FAB-15253B8B6FC3.webp?ex=686c8901&is=686b3781&hm=539e1ea27f346646af2cf6c45849a05fe8470de9f517ba51d1ce06e85f4e1b28&">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title minecraft-font">Les Immigrés</div>
+        <div class="navbar-buttons">
+            <button id="retour-btn" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Retour
+            </button>
+        </div>
+        <div class="navbar-right">
+            <div class="navbar-user">
+                <span id="user-pseudo" class="user-pseudo">
+                    <i class="fas fa-user"></i> Pseudo
+                </span>
+                <div id="user-popup" class="user-popup" style="display:none;">
+                    <a href="#" id="profil-link"><i class="fas fa-user-cog"></i> Profil</a>
+                    <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="main-center">
+        <h1 class="main-title minecraft-font">PANEL DE GESTION</h1>
+        <div class="gestion-container">
+            <div class="gestion-section">
+                <h2><i class="fas fa-ticket-alt"></i> Gestion des Tickets</h2>
+                <div class="tickets-list" id="tickets-list">
+                    <!-- Les tickets seront chargés ici -->
+                </div>
+            </div>
+            
+            <div class="gestion-section">
+                <h2><i class="fas fa-users"></i> Gestion des Utilisateurs</h2>
+                <div class="users-list" id="users-list">
+                    <!-- Les utilisateurs seront chargés ici -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script type="module" src="gestion/gestion.js"></script>
+</body>
+</html> 

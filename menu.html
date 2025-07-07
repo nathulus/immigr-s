@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <link rel="stylesheet" href="menu/menu.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/webp" href="https://cdn.discordapp.com/attachments/1009124376458842153/1391613972347883662/AE978395-B96A-49B0-8FAB-15253B8B6FC3.webp?ex=686c8901&is=686b3781&hm=539e1ea27f346646af2cf6c45849a05fe8470de9f517ba51d1ce06e85f4e1b28&">
+    <link rel="apple-touch-icon" href="https://cdn.discordapp.com/attachments/1009124376458842153/1391613972347883662/AE978395-B96A-49B0-8FAB-15253B8B6FC3.webp?ex=686c8901&is=686b3781&hm=539e1ea27f346646af2cf6c45849a05fe8470de9f517ba51d1ce06e85f4e1b28&">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title minecraft-font">LES IMMIGRÉS</div>
+        <div class="navbar-buttons">
+            <button id="ticket-btn" class="nav-btn">
+                <i class="fas fa-ticket-alt"></i> <span>Tickets</span>
+            </button>
+            <button id="boutique-btn" class="nav-btn">
+                <i class="fas fa-shopping-cart"></i> <span>Boutique</span>
+            </button>
+            <button id="gestion-btn" class="nav-btn admin-only" style="display: none;">
+                <i class="fas fa-cog"></i> <span>Gestion</span>
+            </button>
+        </div>
+        <div class="navbar-right">
+            <button class="discord-btn">
+                <i class="fab fa-discord"></i> <span>Discord</span>
+            </button>
+            <div class="navbar-user">
+                <span id="user-pseudo" class="user-pseudo">
+                    <i class="fas fa-user"></i> <span>nathulus</span>
+                </span>
+                <div id="user-popup" class="user-popup" style="display:none;">
+                    <a href="#" id="profil-link"><i class="fas fa-user-cog"></i> Profil</a>
+                    <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                    <a href="#" id="gestion-link" style="display:none;"><i class="fas fa-cog"></i> Gestion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="main-center">
+        <h1 class="main-title minecraft-font">LES IMMIGRÉS</h1>
+        <div class="main-frame">
+            <div class="sub-frame">
+                <span class="sub-label"><i class="fas fa-server"></i> IP du serveur :</span>
+                <span class="sub-value" id="server-ip" style="cursor:pointer;">Immigrs.aternos.me</span>
+            </div>
+            <div class="sub-frame">
+                <span class="sub-label"><i class="fas fa-code-branch"></i> Version :</span>
+                <span class="sub-value">+1.8.8</span>
+            </div>
+        </div>
+        <h2 class="subtitle"><i class="fas fa-ticket-alt"></i> Mes tickets</h2>
+        <div class="tickets-container" id="tickets-container">
+            <!-- Les tuiles de tickets seront insérées ici dynamiquement -->
+        </div>
+    </main>
+    <script type="module" src="menu/menu.js"></script>
+</body>
+</html> 
